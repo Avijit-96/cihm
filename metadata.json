@@ -1,0 +1,6 @@
+{
+  "name": "CIHM - Central Institute of Healthcare & Management",
+  "description": "Premier healthcare, paramedical, and clinical management education institute in Kolkata. Offering career-oriented courses in DMLT, Radiology, Dialysis, OT Technology, and Hospital Management with clinical hospital training.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

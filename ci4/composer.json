@@ -1,0 +1,15 @@
+{
+  "name": "cihm/cihm-kolkata-ci4",
+  "type": "project",
+  "description": "CodeIgniter 4 REST API Backend for CIHM Paramedical & Healthcare Institute Kolkata",
+  "license": "MIT",
+  "require": {
+    "php": "^8.1",
+    "codeigniter4/framework": "^4.5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

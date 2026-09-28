@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Smooth continuous marquee animation */
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+  }
+
+  /* Gentle floating animations */
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(0.5deg); }
+  }
+
+  @keyframes float-reverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(8px) rotate(-0.5deg); }
+  }
+
+  /* Radiant pulse glow */
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+      filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.4));
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.03);
+      filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.7));
+    }
+  }
+
+  /* Living gradient wave */
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Shimmering beam across cards */
+  @keyframes shimmer-sweep {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+
+  /* ECG pulse beam */
+  @keyframes ecg-pulse {
+    0% { stroke-dashoffset: 600; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-marquee-reverse {
+    display: flex;
+    width: max-content;
+    animation: marquee-reverse 28s linear infinite;
+  }
+
+  .animate-marquee-reverse:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+
+  .animate-float-reverse {
+    animation: float-reverse 4.5s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-gradient-flow {
+    background-size: 200% 200%;
+    animation: gradient-flow 6s ease infinite;
+  }
+
+  .shimmer-mask {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-mask::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: translateX(-100%);
+    animation: shimmer-sweep 3.5s infinite;
+    pointer-events: none;
+  }
+
+  /* Vector HUD Rotation & Wave Keyframes */
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes rotate-reverse-slow {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
+  @keyframes wave-flow {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-25%); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 0.3; }
+    50% { transform: scale(1.08); opacity: 0.8; }
+    100% { transform: scale(0.95); opacity: 0.3; }
+  }
+
+  @keyframes grid-drift {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 24s linear infinite;
+  }
+
+  .animate-rotate-reverse-slow {
+    animation: rotate-reverse-slow 18s linear infinite;
+  }
+
+  .animate-wave-flow {
+    animation: wave-flow 12s ease-in-out infinite;
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 4s ease-in-out infinite;
+  }
+
+  .bg-grid-cyber {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    animation: grid-drift 20s linear infinite;
+  }
+}
